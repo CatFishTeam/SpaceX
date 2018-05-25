@@ -5,6 +5,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
+import { LaunchpadPage } from '../pages/launchpad/launchpad';
 import {RocketsPage} from "../pages/rockets/rockets";
 
 @Component({
@@ -26,6 +27,9 @@ export class MyApp {
     * `color` : voir dans src/theme/variables.scss > section `$colors`
     * */
     this.pages = [
+      { title: 'Home', component: HomePage, icon: '', color: '' },
+      { title: 'List', component: ListPage, icon: '', color: '' },
+      { title: 'Launchpad', component: LaunchpadPage, icon: '', color: '' },
       { title: 'Home', component: HomePage, icon: 'home', color: 'primary' },
       { title: 'Fusées', component: RocketsPage, icon: 'planet', color: 'danger' }
     ];

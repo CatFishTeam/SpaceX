@@ -8,6 +8,8 @@ import { ListPage } from '../pages/list/list';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { LaunchpadPage } from '../pages/launchpad/launchpad';
+import { DetailLaunchpadPage } from '../pages/detail-launchpad/detail-launchpad';
 import { SpaceXapiProvider } from '../providers/space-xapi/space-xapi';
 import {HttpClient, HttpClientModule} from "@angular/common/http";
 
@@ -18,6 +20,8 @@ import { RocketsPage } from "../pages/rockets/rockets";
     MyApp,
     HomePage,
     ListPage,
+    LaunchpadPage,
+    DetailLaunchpadPage,
     RocketsPage
   ],
   imports: [
@@ -30,6 +34,8 @@ import { RocketsPage } from "../pages/rockets/rockets";
     MyApp,
     HomePage,
     ListPage,
+    LaunchpadPage,
+    DetailLaunchpadPage,
     RocketsPage
   ],
   providers: [

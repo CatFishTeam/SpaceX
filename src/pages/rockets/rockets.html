@@ -17,5 +17,9 @@
 
 
 <ion-content padding>
-  <p>test</p>
+  <div *ngIf="rockets">
+    <div *ngFor="let rocket of rockets">
+      {{ rocket.id }}
+    </div>
+  </div>
 </ion-content>
