@@ -5,6 +5,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
+import {RocketsPage} from "../pages/rockets/rockets";
 
 @Component({
   templateUrl: 'app.html'
@@ -14,15 +15,19 @@ export class MyApp {
 
   rootPage: any = HomePage;
 
-  pages: Array<{title: string, component: any, icon: string}>;
+  pages: Array<{title: string, component: any, icon: string, color: string}>;
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
+    /*
+    * `icon` : https://ionicframework.com/docs/ionicons/
+    * `color` : voir dans src/theme/variables.scss > section `$colors`
+    * */
     this.pages = [
-      { title: 'Home', component: HomePage, icon: 'home' },
-      { title: 'Fusées', component: ListPage, icon: 'planet' }
+      { title: 'Home', component: HomePage, icon: 'home', color: 'primary' },
+      { title: 'Fusées', component: RocketsPage, icon: 'planet', color: 'danger' }
     ];
 
   }
