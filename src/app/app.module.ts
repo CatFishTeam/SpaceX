@@ -10,12 +10,14 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { SpaceXapiProvider } from '../providers/space-xapi/space-xapi';
 import {HttpClient, HttpClientModule} from "@angular/common/http";
+import {RocketsPage} from "../pages/rockets/rockets";
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    ListPage
+    ListPage,
+    RocketsPage
   ],
   imports: [
     BrowserModule,
@@ -26,7 +28,8 @@ import {HttpClient, HttpClientModule} from "@angular/common/http";
   entryComponents: [
     MyApp,
     HomePage,
-    ListPage
+    ListPage,
+    RocketsPage
   ],
   providers: [
     StatusBar,
