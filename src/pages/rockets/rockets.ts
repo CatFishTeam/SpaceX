@@ -15,7 +15,15 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class RocketsPage {
 
+  rockets : any;
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    fetch('https://api.spacexdata.com/v2/rockets')
+      .then(res => res.json())
+      .then(data =>  {
+        console.log(data);
+        this.rockets = data;
+      });
   }
 
   ionViewDidLoad() {
