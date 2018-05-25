@@ -11,11 +11,11 @@ export class HomePage {
   rockets:any;
   constructor(
     public navCtrl: NavController,
-    public launches: SpaceXapiProvider
+    public api: SpaceXapiProvider
   ){}
 
   ionViewDidLoad(){
-    this.launches.getLaunches().subscribe(data => this.rockets = data);
+    this.api.getRockets().subscribe(data => this.rockets = data);
   }
 
 }

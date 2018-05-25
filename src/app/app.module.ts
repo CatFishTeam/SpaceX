@@ -10,7 +10,8 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { SpaceXapiProvider } from '../providers/space-xapi/space-xapi';
 import {HttpClient, HttpClientModule} from "@angular/common/http";
-import {RocketsPage} from "../pages/rockets/rockets";
+
+import { RocketsPage } from "../pages/rockets/rockets";
 
 @NgModule({
   declarations: [
