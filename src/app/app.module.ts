@@ -10,6 +10,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { LaunchpadPage } from '../pages/launchpad/launchpad';
 import { DetailLaunchpadPage } from '../pages/detail-launchpad/detail-launchpad';
+import {RocketsPage} from "../pages/rockets/rockets";
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { DetailLaunchpadPage } from '../pages/detail-launchpad/detail-launchpad'
     HomePage,
     ListPage,
     LaunchpadPage,
-    DetailLaunchpadPage
+    DetailLaunchpadPage,
+    RocketsPage
   ],
   imports: [
     BrowserModule,
@@ -28,7 +30,9 @@ import { DetailLaunchpadPage } from '../pages/detail-launchpad/detail-launchpad'
     MyApp,
     HomePage,
     ListPage,
-    LaunchpadPage,DetailLaunchpadPage
+    LaunchpadPage,
+    DetailLaunchpadPage,
+    RocketsPage
   ],
   providers: [
     StatusBar,
