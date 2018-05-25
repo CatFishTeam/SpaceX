@@ -10,6 +10,8 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { LaunchpadPage } from '../pages/launchpad/launchpad';
 import { DetailLaunchpadPage } from '../pages/detail-launchpad/detail-launchpad';
+import { SpaceXapiProvider } from '../providers/space-xapi/space-xapi';
+import {HttpClient, HttpClientModule} from "@angular/common/http";
 import {RocketsPage} from "../pages/rockets/rockets";
 
 @NgModule({
@@ -24,6 +26,7 @@ import {RocketsPage} from "../pages/rockets/rockets";
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
+    HttpClientModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -37,7 +40,8 @@ import {RocketsPage} from "../pages/rockets/rockets";
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    SpaceXapiProvider
   ]
 })
 export class AppModule {}
