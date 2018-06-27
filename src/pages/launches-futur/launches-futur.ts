@@ -15,7 +15,15 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class LaunchesFuturPage {
 
+  launches : any;
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    fetch('https://api.spacexdata.com/v2/launches/upcoming')
+      .then(res => res.json())
+      .then(data =>  {
+        console.log(data);
+        this.launches = data;
+      });
   }
 
   swipe(event) {
