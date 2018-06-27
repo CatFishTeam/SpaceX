@@ -20,12 +20,6 @@ export class RocketsPage {
   rockets : any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public modalController: ModalController, public api: SpaceXapiProvider) {
-    // fetch('https://api.spacexdata.com/v2/rockets')
-    //   .then(res => res.json())
-    //   .then(data =>  {
-    //     console.log(data);
-    //     this.rockets = data;
-    //   });
     this.api.getRockets().subscribe( data => this.rockets = data);
   }
 
@@ -34,7 +28,6 @@ export class RocketsPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad RocketsPage');
   }
 
 }

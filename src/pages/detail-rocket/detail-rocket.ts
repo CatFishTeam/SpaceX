@@ -24,10 +24,6 @@ export class DetailRocketPage {
 
   ionViewDidLoad() {
     this.api.getRocket(this.rocketId).subscribe(data => this.rocket = data);
-
-    console.log('ionViewDidLoad DetailRocketPage');
-    console.log(this.rocketId);
-    console.log(this.rocket);
   }
 
 }
