@@ -34,11 +34,10 @@ export class LaunchpadPage {
         note: 'This is lauchpad #' + i
       });
     }
-    
+
   }
 
   openModal(charNum) {
-
     let modal = this.modalCtrl.create(DetailLaunchpadPage, charNum);
     modal.present();
   }
