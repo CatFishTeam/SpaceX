@@ -10,7 +10,7 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>rockets</ion-title>
+    <ion-title>Rockets</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -18,8 +18,47 @@
 
 <ion-content padding>
   <div *ngIf="rockets">
-    <div *ngFor="let rocket of rockets">
-      {{ rocket.id }}
-    </div>
+    <ion-card *ngFor="let rocket of rockets" class="single-rocket">
+      <ion-card-header class="rocket-header item item-divider">
+        <ion-card-title ion-text color="primary">{{ rocket.name }}</ion-card-title>
+        <p>Made by {{ rocket.company }}</p>
+        <div ion-text color="semi-dark-gray" class="description">
+          {{ rocket.description }}
+        </div>
+      </ion-card-header>
+      <ion-card-content class="rocket-content item item-body">
+        <ion-list>
+          <ion-list-header>Specs</ion-list-header>
+          <!-- En activité -->
+          <ion-item>
+            <div class="row">
+              <span class="col-one">Active</span>
+              <span class="col-two">{{ rocket.active ? 'Yes' : 'No' }}</span>
+            </div>
+          </ion-item>
+          <!-- Pays -->
+          <ion-item color="light">
+            <div class="row">
+              <span class="col-one">Country</span>
+              <span class="col-two">{{ rocket.country }}</span>
+            </div>
+          </ion-item>
+          <!-- Diamètre -->
+          <ion-item>
+            <div class="row">
+              <span class="col-one">Diameter</span>
+              <span class="col-two">{{ rocket.diameter.meters }} m</span>
+            </div>
+          </ion-item>
+          <!-- Hauteur -->
+          <ion-item>
+            <div class="row">
+              <span class="col-one">Height</span>
+              <span class="col-two">{{ rocket.height.meters }} m</span>
+            </div>
+          </ion-item>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
   </div>
 </ion-content>

@@ -33,7 +33,7 @@ export class MyApp {
       { title: 'List', component: ListPage, icon: '', color: '' },
       { title: 'Launchpad', component: LaunchpadPage, icon: '', color: '' },
       { title: 'Home', component: HomePage, icon: 'home', color: 'primary' },
-      { title: 'Fusées', component: RocketsPage, icon: 'planet', color: 'danger' },
+      { title: 'Rockets', component: RocketsPage, icon: 'planet', color: 'danger' }
       { title: 'Launches', component: TabslaunchesPage }
     ];
 
