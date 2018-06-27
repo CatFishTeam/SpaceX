@@ -9,6 +9,7 @@ import { LaunchpadPage } from '../pages/launchpad/launchpad';
 import {RocketsPage} from "../pages/rockets/rockets";
 
 import { TabslaunchesPage } from '../pages/tabslaunches/tabslaunches';
+import {AboutPage} from "../pages/about/about";
 
 @Component({
   templateUrl: 'app.html'
@@ -18,7 +19,7 @@ export class MyApp {
 
   rootPage: any = TabslaunchesPage;
 
-  pages: Array<{title: string, component: any, icon: string, color: string}>;
+  pages: Array<{title: string, component: any, icon: string, color: string, img: string}>;
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
     this.initializeApp();
@@ -29,12 +30,11 @@ export class MyApp {
     * `color` : voir dans src/theme/variables.scss > section `$colors`
     * */
     this.pages = [
-      { title: 'Home', component: HomePage, icon: '', color: '' },
-      { title: 'List', component: ListPage, icon: '', color: '' },
-      { title: 'Launchpad', component: LaunchpadPage, icon: '', color: '' },
-      { title: 'Home', component: HomePage, icon: 'home', color: 'primary' },
-      { title: 'Rockets', component: RocketsPage, icon: 'planet', color: 'danger' },
-      { title: 'Launches', component: TabslaunchesPage,  icon: '', color: '' }
+      { title: 'Home', component: HomePage, icon: 'home', color: 'primary', img: '' },
+      { title: 'Launchpad', component: LaunchpadPage, icon: '', color: '', img: '' },
+      { title: 'Rockets', component: RocketsPage, icon: 'planet', color: 'danger', img: '' },
+      { title: 'Launches', component: TabslaunchesPage,  icon: 'flash', color: 'gold', img: '' },
+      { title: 'About', component: AboutPage,  icon: '', color: '', img: 'https://upload.wikimedia.org/wikipedia/commons/3/36/SpaceX-Logo-Xonly.svg' },
     ];
 
   }
