@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { SpaceXapiProvider } from "../../providers/space-xapi/space-xapi";
 
 /**
  * Generated class for the LaunchesFuturPage page.
@@ -10,21 +11,21 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-launches-futur',
-  templateUrl: 'launches-futur.html',
+  selector : 'page-launches-futur',
+  templateUrl : 'launches-futur.html',
 })
 export class LaunchesFuturPage {
 
   launches : any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-    fetch('https://api.spacexdata.com/v2/launches/upcoming')
-      .then(res => res.json())
-      .then(data =>  {
-        console.log(data);
-        this.launches = data;
-      });
+  constructor(public navCtrl: NavController, public navParams: NavParams, public api: SpaceXapiProvider) {
+
   }
+
+  ionViewDidLoad(){
+    this.api.getUpcomingLaunches().subscribe( data => this.launches = data);
+  }
+
 
   swipe(event) {
     if(event.direction === 4) {

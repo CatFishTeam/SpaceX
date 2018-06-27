@@ -21,7 +21,6 @@ export class SpaceXapiProvider {
     let apiURL = `${this.apiRoot}/rockets/`+name;
     return this.http.get<IRockets>(apiURL);
   }
-
     getLaunchpads() : Observable<ILaunchpads[]> {
       let apiURL = `${this.apiRoot}/launchpads`;
     console.log(this.http.get<ILaunchpads[]>(apiURL).subscribe((res) => { console.log(res) }));
@@ -30,7 +29,17 @@ export class SpaceXapiProvider {
 
 
   getLaunchpad(name) : Observable<ILaunchpads> {
-    let apiURL = `${this.apiRoot}/launchpads/` +name;
+    let apiURL = `${this.apiRoot}/launchpads/` + name;
     return this.http.get<ILaunchpads>(apiURL);
+  }
+
+  getUpcomingLaunches() : Observable<IRockets> {
+    let apiURL = `${this.apiRoot}/launches/upcoming`;
+    return this.http.get<IRockets>(apiURL);
+  }
+
+  getPreviousLaunches() : Observable<IRockets> {
+    let apiURL = `${this.apiRoot}/launches`;
+    return this.http.get<IRockets>(apiURL);
   }
 }
