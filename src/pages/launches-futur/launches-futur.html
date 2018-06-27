@@ -16,14 +16,10 @@
 
 <ion-content padding>
   <div class="main-content" (swipe)="swipe($event)">
-    <h2>page 2</h2>
-    <p>
-      This starter project comes with simple tabs-based layout for apps
-      that are going to primarily use a Tabbed UI.
-    </p>
-    <p>
-      Take a look at the <code>src/pages/</code> directory to add or change tabs,
-      update any existing page or create new pages.
-    </p>
+    <div *ngIf="launches">
+      <div *ngFor="let launch of launches">
+        {{ launch.mission_name }}
+      </div>
+    </div>
   </div>
 </ion-content>
