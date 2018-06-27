@@ -5,15 +5,18 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
+import { TabslaunchesPage } from "../pages/tabslaunches/tabslaunches";
+import { LaunchesPastPage } from "../pages/launches-past/launches-past";
+import { LaunchesFuturPage } from "../pages/launches-futur/launches-futur";
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { LaunchpadPage } from '../pages/launchpad/launchpad';
 import { DetailLaunchpadPage } from '../pages/detail-launchpad/detail-launchpad';
 import { SpaceXapiProvider } from '../providers/space-xapi/space-xapi';
-import {HttpClient, HttpClientModule} from "@angular/common/http";
-
 import { RocketsPage } from "../pages/rockets/rockets";
+import {HttpClient, HttpClientModule} from "@angular/common/http";
+import { NativePageTransitions } from '@ionic-native/native-page-transitions';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,10 @@ import { RocketsPage } from "../pages/rockets/rockets";
     ListPage,
     LaunchpadPage,
     DetailLaunchpadPage,
-    RocketsPage
+    RocketsPage,
+    LaunchesPastPage,
+    LaunchesFuturPage,
+    TabslaunchesPage
   ],
   imports: [
     BrowserModule,
@@ -36,13 +42,17 @@ import { RocketsPage } from "../pages/rockets/rockets";
     ListPage,
     LaunchpadPage,
     DetailLaunchpadPage,
-    RocketsPage
+    RocketsPage,
+    LaunchesPastPage,
+    LaunchesFuturPage,
+    TabslaunchesPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    SpaceXapiProvider
+    SpaceXapiProvider,
+    NativePageTransitions
   ]
 })
 export class AppModule {}

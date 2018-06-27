@@ -8,13 +8,15 @@ import { ListPage } from '../pages/list/list';
 import { LaunchpadPage } from '../pages/launchpad/launchpad';
 import {RocketsPage} from "../pages/rockets/rockets";
 
+import { TabslaunchesPage } from '../pages/tabslaunches/tabslaunches';
+
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = HomePage;
+  rootPage: any = TabslaunchesPage;
 
   pages: Array<{title: string, component: any, icon: string, color: string}>;
 
@@ -31,7 +33,8 @@ export class MyApp {
       { title: 'List', component: ListPage, icon: '', color: '' },
       { title: 'Launchpad', component: LaunchpadPage, icon: '', color: '' },
       { title: 'Home', component: HomePage, icon: 'home', color: 'primary' },
-      { title: 'Fusées', component: RocketsPage, icon: 'planet', color: 'danger' }
+      { title: 'Fusées', component: RocketsPage, icon: 'planet', color: 'danger' },
+      { title: 'Launches', component: TabslaunchesPage }
     ];
 
   }
