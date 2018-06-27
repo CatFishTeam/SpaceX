@@ -1,3 +1,55 @@
 page-rockets {
 
+  ion-header {
+
+  }
+
+  ion-content {
+
+    .single-rocket {
+      padding: 30px 0;
+      border-bottom: 1px solid lightgray;
+
+      .rocket-header {
+        text-align: center;
+
+        p {
+          font-style: italic;
+        }
+
+        .description {
+          white-space: normal;
+          text-align: left;
+          margin: 30px 0 20px;
+        }
+      }
+
+      .rocket-content {
+
+        ion-list {
+
+          ion-item {
+
+            .row {
+              display: flex;
+              justify-content: space-between;
+              overflow-x: scroll;
+
+              span {
+                max-width: 50%;
+
+                .col-two {
+                  font-weight: bold;
+                }
+              }
+            }
+
+          }
+
+        }
+
+      }
+    }
+
+  }
 }
