@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
+import {DetailRocketPage} from "../detail-rocket/detail-rocket";
+import { SpaceXapiProvider } from '../../providers/space-xapi/space-xapi';
 
 /**
  * Generated class for the RocketsPage page.
@@ -17,13 +19,18 @@ export class RocketsPage {
 
   rockets : any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-    fetch('https://api.spacexdata.com/v2/rockets')
-      .then(res => res.json())
-      .then(data =>  {
-        console.log(data);
-        this.rockets = data;
-      });
+  constructor(public navCtrl: NavController, public navParams: NavParams, public modalController: ModalController, public api: SpaceXapiProvider) {
+    // fetch('https://api.spacexdata.com/v2/rockets')
+    //   .then(res => res.json())
+    //   .then(data =>  {
+    //     console.log(data);
+    //     this.rockets = data;
+    //   });
+    this.api.getRockets().subscribe( data => this.rockets = data);
+  }
+
+  rocketDetail(rocketId) {
+    this.navCtrl.push(DetailRocketPage, { id: rocketId });
   }
 
   ionViewDidLoad() {

@@ -16,8 +16,8 @@ export class SpaceXapiProvider {
       return this.http.get<IRockets[]>(apiURL);
   }
 
-  getRocket(name) : Observable<IRockets> {
-    let apiURL = `${this.apiRoot}/rockets/`+name;
+  getRocket(id) : Observable<IRockets> {
+    let apiURL = `${this.apiRoot}/rockets/`+id;
     return this.http.get<IRockets>(apiURL);
   }
 }
