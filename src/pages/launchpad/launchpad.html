@@ -9,14 +9,23 @@
       <button ion-button menuToggle>
         <ion-icon name="menu"></ion-icon>
       </button>
-      <ion-title>Lauchpad</ion-title>
+      <ion-title>Lauchpads</ion-title>
     </ion-navbar>
   </ion-header>
-  
+
 <ion-content>
     <ion-list>
-      <a ion-item *ngFor="let item of items" (click)="openModal({charNum: item.charNum})">
-        {{item.title}}
+      <a ion-item *ngFor="let launchpad of launchpads" (click)="openModal({launchpadId: launchpad?.id})">
+      <span *ngIf="launchpad.status == 'active'">
+            <ion-badge color="secondary">&nbsp;</ion-badge>
+      </span>
+        <span *ngIf="launchpad.status == 'retired'">
+            <ion-badge color="danger">&nbsp;</ion-badge>
+          </span>
+        <span *ngIf="launchpad.status == 'under construction'">
+            <ion-badge color="warning">&nbsp;</ion-badge>
+      </span>
+        {{launchpad?.full_name}}
       </a>
     </ion-list>
 

@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
 import { DetailLaunchpadPage } from '../detail-launchpad/detail-launchpad';
+import { SpaceXapiProvider } from '../../providers/space-xapi/space-xapi';
+import {DetailRocketPage} from "../detail-rocket/detail-rocket";
 
 /**
  * Generated class for the LaunchpadPage page.
@@ -19,31 +21,17 @@ export class LaunchpadPage {
   selectedItem: any;
   icons: string[];
   items: Array<{title: string, note: string, charNum: number}>;
+  launchpads:any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController) {
-    // If we navigated to this page, we will have an item available as a nav param
-    this.selectedItem = navParams.get('item');
-
-    // Let's populate this page with some filler content for funzies
-
-    this.items = [];
-    for (let i = 1; i < 7; i++) {
-      this.items.push({
-        title: 'Launchpad ' + i,
-        charNum: i,
-        note: 'This is lauchpad #' + i
-      });
-    }
-
+  constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController, public api: SpaceXapiProvider) {
+    this.api.getLaunchpads().subscribe(data => this.launchpads = data);
   }
 
-  openModal(charNum) {
-    let modal = this.modalCtrl.create(DetailLaunchpadPage, charNum);
-    modal.present();
-  }
+  openModal(launchpadId) {
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad LaunchpadPage');
+    this.navCtrl.push(DetailLaunchpadPage, { id: launchpadId });
+    //let modal = this.modalCtrl.create(DetailLaunchpadPage, charNum);
+    //modal.present();
   }
 
 }
