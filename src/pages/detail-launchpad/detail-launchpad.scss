@@ -1,3 +1,65 @@
 page-detail-launchpad {
 
+  .single-launchpad {
+    padding: 30px 0;
+    border-bottom: 1px solid lightgray;
+
+    .launchpad-header {
+      text-align: center;
+
+      ion-card-title {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        white-space: normal;
+
+        ion-badge {
+          margin: 0 5px;
+        }
+      }
+
+      p {
+        font-style: italic;
+      }
+
+      .description {
+        white-space: normal;
+        text-align: left;
+        margin: 30px 0 20px;
+      }
+    }
+
+    .launchpad-content {
+      ion-list {
+
+        button {
+          padding: 0;
+
+          span {
+            margin-right: 5px;
+          }
+        }
+
+        ion-item {
+
+          .row {
+            display: flex;
+            justify-content: space-between;
+            overflow-x: scroll;
+
+            span {
+              max-width: 50%;
+
+              .col-two {
+                font-weight: bold;
+              }
+            }
+          }
+        }
+      }
+
+    }
+
+  }
+
 }
