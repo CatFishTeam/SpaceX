@@ -16,6 +16,7 @@ import { DetailLaunchpadPage } from '../pages/detail-launchpad/detail-launchpad'
 import { SpaceXapiProvider } from '../providers/space-xapi/space-xapi';
 import { RocketsPage } from "../pages/rockets/rockets";
 import {DetailRocketPage} from "../pages/detail-rocket/detail-rocket";
+import {DetailLaunchPage} from "../pages/detail-launch/detail-launch";
 
 import {HttpClient, HttpClientModule} from "@angular/common/http";
 import { NativePageTransitions } from '@ionic-native/native-page-transitions';
@@ -31,6 +32,7 @@ import { NativePageTransitions } from '@ionic-native/native-page-transitions';
     DetailRocketPage,
     LaunchesPastPage,
     LaunchesFuturPage,
+    DetailLaunchPage,
     TabslaunchesPage
   ],
   imports: [
@@ -49,6 +51,7 @@ import { NativePageTransitions } from '@ionic-native/native-page-transitions';
     DetailRocketPage,
     LaunchesPastPage,
     LaunchesFuturPage,
+    DetailLaunchPage,
     TabslaunchesPage
   ],
   providers: [

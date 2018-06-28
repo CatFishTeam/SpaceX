@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { SpaceXapiProvider } from "../../providers/space-xapi/space-xapi";
+import {DetailRocketPage} from "../detail-rocket/detail-rocket";
+import {DetailLaunchPage} from "../detail-launch/detail-launch";
 
 /**
  * Generated class for the LaunchesPastPage page.
@@ -37,13 +39,14 @@ export class LaunchesPastPage {
   launchesDateFilter(ev: any) {
     // Reset items back to all of the items
 
+
     // set val to the value of the searchbar
-    const val = ev.target.value;
+    const val = ev.value;
 
     // if the value is an empty string don't filter the items
-    if (val && val.trim() != '') {
+    if (val && val.lower != '' && val.upper != '') {
       this.launches = this.launches.filter((item) => {
-        return (item.mission_name.toLowerCase().indexOf(val.toLowerCase()) > -1);
+        return (item.launch_year >= val.lower && item.launch_year <= val.upper);
       })
     }
   }
@@ -64,6 +67,26 @@ export class LaunchesPastPage {
         return (item.mission_name.toLowerCase().indexOf(val.toLowerCase()) > -1);
       })
     }
+  }
+
+  lanchesSuccesFilter(ev: any) {
+    // Reset items back to all of the items
+
+    console.log(ev);
+
+    // set val to the value of the searchbar
+    const val = ev.checked;
+
+
+
+    // if the value is an empty string don't filter the items{
+      this.launches = this.launches.filter((item) => {
+        return (item.launch_success == val);
+      })
+  }
+
+  launchDetail(flightNumber) {
+    this.navCtrl.push(DetailLaunchPage, { id: flightNumber });
   }
 
 }
