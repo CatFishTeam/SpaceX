@@ -3,7 +3,9 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Home</ion-title>
+    <ion-title>
+
+    </ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -11,7 +13,6 @@
   <h1 text-center>{{launch?.mission_name}}  <span>n° {{launch?.flight_number}}</span></h1>
   <p *ngIf="launch?.details!==null">{{launch?.details}}</p>
   <img src="{{launch?.links.mission_patch}}" *ngIf="launch?.links.mission_patch!==null">
-  <p></p>
   <ul>
     <li *ngIf="days!==0">{{days}} d</li>
     <li>{{hours}} h</li>

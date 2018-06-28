@@ -4,11 +4,9 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
 import { TabslaunchesPage } from "../pages/tabslaunches/tabslaunches";
 import { LaunchesPastPage } from "../pages/launches-past/launches-past";
 import { LaunchesFuturPage } from "../pages/launches-futur/launches-futur";
-
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { LaunchpadPage } from '../pages/launchpad/launchpad';
@@ -24,7 +22,6 @@ import { NativePageTransitions } from '@ionic-native/native-page-transitions';
   declarations: [
     MyApp,
     HomePage,
-    ListPage,
     LaunchpadPage,
     DetailLaunchpadPage,
     RocketsPage,
@@ -42,7 +39,6 @@ import { NativePageTransitions } from '@ionic-native/native-page-transitions';
   entryComponents: [
     MyApp,
     HomePage,
-    ListPage,
     LaunchpadPage,
     DetailLaunchpadPage,
     RocketsPage,

@@ -4,7 +4,6 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
 import { LaunchpadPage } from '../pages/launchpad/launchpad';
 import {RocketsPage} from "../pages/rockets/rockets";
 
@@ -29,12 +28,10 @@ export class MyApp {
     * `color` : voir dans src/theme/variables.scss > section `$colors`
     * */
     this.pages = [
-      { title: 'Home', component: HomePage, icon: '', color: '' },
-      { title: 'List', component: ListPage, icon: '', color: '' },
-      { title: 'Launchpad', component: LaunchpadPage, icon: '', color: '' },
       { title: 'Home', component: HomePage, icon: 'home', color: 'primary' },
-      { title: 'Rockets', component: RocketsPage, icon: 'planet', color: 'danger' },
-      { title: 'Launches', component: TabslaunchesPage,  icon: '', color: '' }
+      { title: 'Rockets', component: RocketsPage, icon: 'ios-jet', color: 'danger' },
+      { title: 'Launches', component: TabslaunchesPage,  icon: '', color: '' },
+      { title: 'Launchpad', component: LaunchpadPage, icon: 'planet', color: '' },
     ];
 
   }
