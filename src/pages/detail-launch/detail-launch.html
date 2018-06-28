@@ -33,16 +33,16 @@
     <ion-card-content class="launch-content item item-body">
       <ion-list>
         <ion-list-header>Specs</ion-list-header>
-        <ion-item color="light">
-          <div class="row">
-            <span class="col-one">Rocket</span>
-            <span class="col-two">{{ launch.rocket.rocket_name }}</span>
-          </div>
+        <ion-item color="light" (click)="rocketDetail({ rocketId: launch.rocket.rocket_id })">
+            <div class="row">
+              <span class="col-one">Rocket</span>
+              <span class="col-two">{{ launch.rocket.rocket_name }}</span>
+            </div>
         </ion-item>
-        <ion-item>
+        <ion-item (click)="openModal({launchpadId: launch.launch_site.site_id})">
           <div class="row">
             <span class="col-one">Launchpad</span>
-            <span class="col-two">{{ launch.launch_site.site_name }} m</span>
+            <span class="col-two">{{ launch.launch_site.site_name }}</span>
           </div>
         </ion-item>
       </ion-list>
@@ -60,7 +60,7 @@
             <span class="col-two">{{ launch.reuse.side_core1 }}</span>
           </div>
         </ion-item>
-        <ion-item>
+        <ion-item color="light">
           <div class="row">
             <span class="col-one">Side Core 2</span>
             <span class="col-two">{{ launch.reuse.side_core2 }}</span>
@@ -72,7 +72,7 @@
             <span class="col-two">{{ launch.reuse.fairings }}</span>
           </div>
         </ion-item>
-        <ion-item>
+        <ion-item color="light">
           <div class="row">
             <span class="col-one">Capsule</span>
             <span class="col-two">{{ launch.reuse.capsule }}</span>
