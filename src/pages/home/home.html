@@ -8,14 +8,10 @@
 </ion-header>
 
 <ion-content padding>
-  <h3>Ionic Menu Starter</h3>
-
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
-
-  <button ion-button secondary menuToggle>Toggle Menu</button>
-  <div *ngFor="let r of rockets">
-    {{r.id}}
-  </div>
+  <h1 text-center>{{launch?.mission_name}}</h1>
+  <img src="{{launch?.links.mission_patch}}" *ngIf="launch?.links.mission_patch!==null">
+  <p *ngIf="launch?.details!==null">{{launch?.details}}</p>
+  <h2 text-center>{{launch?.flight_number}}</h2>
+  <p>Depart: {{date}}</p>
+  <h3></h3>
 </ion-content>
