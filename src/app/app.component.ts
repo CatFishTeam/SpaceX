@@ -15,7 +15,7 @@ import { TabslaunchesPage } from '../pages/tabslaunches/tabslaunches';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = TabslaunchesPage;
+  rootPage: any = HomePage;
 
   pages: Array<{title: string, component: any, icon: string, color: string}>;
 

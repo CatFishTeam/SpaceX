@@ -4,19 +4,19 @@
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>
-
+      <img src="assets/imgs/spacex_logo.png">
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
   <h1 text-center>{{launch?.mission_name}}  <span>n° {{launch?.flight_number}}</span></h1>
-  <p *ngIf="launch?.details!==null">{{launch?.details}}</p>
-  <img src="{{launch?.links.mission_patch}}" *ngIf="launch?.links.mission_patch!==null">
-  <ul>
+  <ul center>
     <li *ngIf="days!==0">{{days}} d</li>
     <li>{{hours}} h</li>
     <li>{{minutes}} m</li>
     <li>{{secondes}} s</li>
   </ul>
+  <p *ngIf="launch?.details!==null">{{launch?.details}}</p>
+  <img src="{{launch?.links.mission_patch}}" *ngIf="launch?.links.mission_patch!==null">
 </ion-content>
