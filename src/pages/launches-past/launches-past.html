@@ -15,6 +15,16 @@
 
 
 <ion-content padding>
+  <div>
+      <ion-searchbar (ionInput)="launchesNameFilter($event)"></ion-searchbar>
+      <ion-item>
+        <ion-range min="2000" max="2020" step="1" dualKnobs="true" pin="true" [(ngModel)]="dates" color="dark" (ionChange)="launchesDateFilter($event)">
+          <ion-label range-left>{{dates.lower}}</ion-label>
+          <ion-label range-right>{{dates.upper}}</ion-label>
+        </ion-range>
+      </ion-item>
+
+  </div>
   <div class="main-content" (swipe)="swipe($event)">
     <div *ngIf="launches">
       <div *ngFor="let launch of launches">
