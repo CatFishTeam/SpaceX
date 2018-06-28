@@ -8,10 +8,10 @@
 </ion-header>
 
 <ion-content padding>
-  <h1 text-center>{{launch?.mission_name}}</h1>
-  <img src="{{launch?.links.mission_patch}}" *ngIf="launch?.links.mission_patch!==null">
+  <h1 text-center>{{launch?.mission_name}}  <span>n° {{launch?.flight_number}}</span></h1>
   <p *ngIf="launch?.details!==null">{{launch?.details}}</p>
-  <h2 text-center>{{launch?.flight_number}}</h2>
+  <img src="{{launch?.links.mission_patch}}" *ngIf="launch?.links.mission_patch!==null">
+  <p></p>
   <ul>
     <li *ngIf="days!==0">{{days}} d</li>
     <li>{{hours}} h</li>
