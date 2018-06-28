@@ -12,6 +12,10 @@
   <img src="{{launch?.links.mission_patch}}" *ngIf="launch?.links.mission_patch!==null">
   <p *ngIf="launch?.details!==null">{{launch?.details}}</p>
   <h2 text-center>{{launch?.flight_number}}</h2>
-  <p>Depart: {{date}}</p>
-  <h3></h3>
+  <ul>
+    <li *ngIf="days!==0">{{days}} d</li>
+    <li>{{hours}} h</li>
+    <li>{{minutes}} m</li>
+    <li>{{secondes}} s</li>
+  </ul>
 </ion-content>
