@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import 'rxjs/add/operator/map';
 import { IRockets } from '../../services/IRockets';
 import { ILaunchpads } from '../../services/ILaunchpads';
+import {ILaunch} from "../../services/ILaunch";
 import { ILaunches } from '../../services/ILaunches';
 
 @Injectable()
@@ -35,10 +36,25 @@ export class SpaceXapiProvider {
     return this.http.get<ILaunchpads[]>(apiURL);
   }
 
-
   getLaunchpad(name): Observable<ILaunchpads> {
     let apiURL = `${this.apiRoot}/launchpads/` + name;
     return this.http.get<ILaunchpads>(apiURL);
+  }
+
+
+  getUpcomingLaunches() : Observable<ILaunch> {
+    let apiURL = `${this.apiRoot}/launches/upcoming`;
+    return this.http.get<ILaunch>(apiURL);
+  }
+
+  getPreviousLaunches() : Observable<ILaunch> {
+    let apiURL = `${this.apiRoot}/launches`;
+    return this.http.get<ILaunch>(apiURL);
+  }
+
+  getLaunch(id) : Observable<ILaunch> {
+    let apiURL = `${this.apiRoot}/launches/all?flight_number=` + id;
+    return this.http.get<ILaunch>(apiURL);
   }
 
   getNextLaunche(): Observable<ILaunches> {
@@ -48,7 +64,6 @@ export class SpaceXapiProvider {
     }));
     return this.http.get<ILaunches>(apiURL);
   }
-
 
   getLastLaunche(): Observable<ILaunches> {
     let apiURL = `${this.apiRoot}/launches/latest`;

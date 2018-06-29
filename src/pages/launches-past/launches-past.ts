@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { SpaceXapiProvider } from "../../providers/space-xapi/space-xapi";
+import {DetailRocketPage} from "../detail-rocket/detail-rocket";
+import {DetailLaunchPage} from "../detail-launch/detail-launch";
 
 /**
  * Generated class for the LaunchesPastPage page.
@@ -10,26 +13,80 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-launches-past',
-  templateUrl: 'launches-past.html',
+  selector : 'page-launches-past',
+  templateUrl : 'launches-past.html',
 })
 export class LaunchesPastPage {
 
   launches : any;
+  dates : any = { lower: 2000, upper: 2020 };
+  searchQuery: string = '';
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-    fetch('https://api.spacexdata.com/v2/launches')
-      .then(res => res.json())
-      .then(data =>  {
-        console.log(data);
-        this.launches = data;
-      });
+  constructor(public navCtrl: NavController, public navParams: NavParams, public api: SpaceXapiProvider) {
+    this.initializeLaunches();
+  }
+
+  initializeLaunches() {
+    this.api.getPreviousLaunches().subscribe( data => this.launches = data);
   }
 
   swipe(event) {
     if (event.direction === 2) {
       this.navCtrl.parent.select(1);
     }
+  }
+
+  launchesDateFilter(ev: any) {
+    // Reset items back to all of the items
+
+
+    // set val to the value of the searchbar
+    const val = ev.value;
+
+    // if the value is an empty string don't filter the items
+    if (val && val.lower != '' && val.upper != '') {
+      this.launches = this.launches.filter((item) => {
+        return (item.launch_year >= val.lower && item.launch_year <= val.upper);
+      })
+    }
+  }
+
+  launchesNameFilter(ev: any) {
+    // Reset items back to all of the items
+
+    // set val to the value of the searchbar
+    const val = ev.target.value;
+
+    if (val == "" || typeof val == 'undefined') {
+      this.initializeLaunches();
+    }
+
+    // if the value is an empty string don't filter the items
+    if (val && val.trim() !== '') {
+      this.launches = this.launches.filter((item) => {
+        return (item.mission_name.toLowerCase().indexOf(val.toLowerCase()) > -1);
+      })
+    }
+  }
+
+  lanchesSuccesFilter(ev: any) {
+    // Reset items back to all of the items
+
+    console.log(ev);
+
+    // set val to the value of the searchbar
+    const val = ev.checked;
+
+
+
+    // if the value is an empty string don't filter the items{
+      this.launches = this.launches.filter((item) => {
+        return (item.launch_success == val);
+      })
+  }
+
+  launchDetail(flightNumber) {
+    this.navCtrl.push(DetailLaunchPage, { id: flightNumber });
   }
 
 }

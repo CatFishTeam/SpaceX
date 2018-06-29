@@ -15,11 +15,25 @@
 
 
 <ion-content padding>
+  <div>
+    <ion-searchbar (ionInput)="launchesNameFilter($event)"></ion-searchbar>
+    <ion-item>
+      <ion-range min="2018" max="2030" step="1" dualKnobs="true" pin="true" [(ngModel)]="dates" color="dark" (ionChange)="launchesDateFilter($event)">
+        <ion-label range-left>{{dates.lower}}</ion-label>
+        <ion-label range-right>{{dates.upper}}</ion-label>
+      </ion-range>
+    </ion-item>
+
+  </div>
   <div class="main-content" (swipe)="swipe($event)">
-    <div *ngIf="launches">
-      <div *ngFor="let launch of launches">
-        {{ launch.mission_name }}
-      </div>
-    </div>
+    <ion-list>
+      <button ion-item *ngFor="let launch of launches" (click)="launchDetail({ launchId: launch.flight_number })">
+        <span *ngIf="launch?.launch_success; else inactive">
+          <ion-badge color="secondary">&nbsp;</ion-badge>
+        </span>
+        <ng-template #inactive><ion-badge color="danger">&nbsp;</ion-badge></ng-template>
+        {{ launch?.mission_name }} | {{ launch?.launch_year }}
+      </button>
+    </ion-list>
   </div>
 </ion-content>

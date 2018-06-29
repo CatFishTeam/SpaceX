@@ -30,8 +30,8 @@ export class MyApp {
     this.pages = [
       { title: 'Home', component: HomePage, icon: 'home', color: 'primary' },
       { title: 'Rockets', component: RocketsPage, icon: 'ios-jet', color: 'danger' },
-      { title: 'Launches', component: TabslaunchesPage,  icon: '', color: '' },
-      { title: 'Launchpad', component: LaunchpadPage, icon: 'planet', color: '' },
+      { title: 'Launches', component: TabslaunchesPage,  icon: 'calendar', color: 'dark' }
+      { title: 'Launchpad', component: LaunchpadPage, icon: 'planet', color: '' }
     ];
 
   }

@@ -1,0 +1,85 @@
+<!--
+  Generated template for the DetaillaunchPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title *ngIf="launch">{{ launch.mission_name }}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-card *ngIf="launch" class="single-launch">
+    <ion-card-header class="launch-header item item-divider">
+
+      <img class="launch-patch" width="50" src="{{launch.links.mission_patch_small}}" alt="">
+      <ion-card-title ion-text color="primary">
+          <span *ngIf="launch.launch_success; else inactive">
+            <ion-badge color="secondary">&nbsp;</ion-badge>
+          </span>
+        <ng-template #inactive><ion-badge color="danger">&nbsp;</ion-badge></ng-template>
+        {{ launch.mission_name }}
+      </ion-card-title>
+      <p>Launched on {{ launch.launch_date_utc }}</p>
+      <div ion-text color="semi-dark-gray" class="description">
+        {{ launch.details }}
+      </div>
+    </ion-card-header>
+    <ion-card-content class="launch-content item item-body">
+      <ion-list>
+        <ion-list-header>Specs</ion-list-header>
+        <ion-item color="light" (click)="rocketDetail({ rocketId: launch.rocket.rocket_id })">
+            <div class="row">
+              <span class="col-one">Rocket</span>
+              <span class="col-two">{{ launch.rocket.rocket_name }}</span>
+            </div>
+        </ion-item>
+        <ion-item (click)="openModal({launchpadId: launch.launch_site.site_id})">
+          <div class="row">
+            <span class="col-one">Launchpad</span>
+            <span class="col-two">{{ launch.launch_site.site_name }}</span>
+          </div>
+        </ion-item>
+      </ion-list>
+      <ion-list>
+        <ion-list-header>Reusability</ion-list-header>
+        <ion-item color="light">
+          <div class="row">
+            <span class="col-one">Core</span>
+            <span class="col-two">{{ launch.reuse.core }}</span>
+          </div>
+        </ion-item>
+        <ion-item>
+          <div class="row">
+            <span class="col-one">Side Core 1</span>
+            <span class="col-two">{{ launch.reuse.side_core1 }}</span>
+          </div>
+        </ion-item>
+        <ion-item color="light">
+          <div class="row">
+            <span class="col-one">Side Core 2</span>
+            <span class="col-two">{{ launch.reuse.side_core2 }}</span>
+          </div>
+        </ion-item>
+        <ion-item>
+          <div class="row">
+            <span class="col-one">Fairings</span>
+            <span class="col-two">{{ launch.reuse.fairings }}</span>
+          </div>
+        </ion-item>
+        <ion-item color="light">
+          <div class="row">
+            <span class="col-one">Capsule</span>
+            <span class="col-two">{{ launch.reuse.capsule }}</span>
+          </div>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
