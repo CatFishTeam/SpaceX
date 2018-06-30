@@ -13,10 +13,13 @@ import { LaunchpadPage } from '../pages/launchpad/launchpad';
 import { DetailLaunchpadPage } from '../pages/detail-launchpad/detail-launchpad';
 import { SpaceXapiProvider } from '../providers/space-xapi/space-xapi';
 import { RocketsPage } from "../pages/rockets/rockets";
-import {DetailRocketPage} from "../pages/detail-rocket/detail-rocket";
-import {DetailLaunchPage} from "../pages/detail-launch/detail-launch";
+import { DetailRocketPage } from "../pages/detail-rocket/detail-rocket";
+import { DetailLaunchPage } from "../pages/detail-launch/detail-launch";
 
-import {HttpClient, HttpClientModule} from "@angular/common/http";
+import { CapsulesPage } from "../pages/capsules/capsules";
+import { CapsuleDetailPage } from "../pages/capsule-detail/capsule-detail";
+
+import {HttpClientModule} from "@angular/common/http";
 import { NativePageTransitions } from '@ionic-native/native-page-transitions';
 
 @NgModule({
@@ -30,7 +33,9 @@ import { NativePageTransitions } from '@ionic-native/native-page-transitions';
     LaunchesPastPage,
     LaunchesFuturPage,
     DetailLaunchPage,
-    TabslaunchesPage
+    TabslaunchesPage,
+    CapsulesPage,
+    CapsuleDetailPage
   ],
   imports: [
     BrowserModule,
@@ -48,12 +53,14 @@ import { NativePageTransitions } from '@ionic-native/native-page-transitions';
     LaunchesPastPage,
     LaunchesFuturPage,
     DetailLaunchPage,
-    TabslaunchesPage
+    TabslaunchesPage,
+    CapsulesPage,
+    CapsuleDetailPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
     SpaceXapiProvider,
     NativePageTransitions
   ]

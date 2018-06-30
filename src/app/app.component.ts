@@ -4,9 +4,9 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
+import { RocketsPage } from "../pages/rockets/rockets";
+import { CapsulesPage } from "../pages/capsules/capsules";
 import { LaunchpadPage } from '../pages/launchpad/launchpad';
-import {RocketsPage} from "../pages/rockets/rockets";
-
 import { TabslaunchesPage } from '../pages/tabslaunches/tabslaunches';
 
 @Component({
@@ -15,7 +15,7 @@ import { TabslaunchesPage } from '../pages/tabslaunches/tabslaunches';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = HomePage;
+  rootPage: any = CapsulesPage;
 
   pages: Array<{title: string, component: any, icon: string, color: string}>;
 
@@ -30,8 +30,10 @@ export class MyApp {
     this.pages = [
       { title: 'Home', component: HomePage, icon: 'home', color: 'primary' },
       { title: 'Rockets', component: RocketsPage, icon: 'ios-jet', color: 'danger' },
-      { title: 'Launches', component: TabslaunchesPage,  icon: 'calendar', color: 'dark' }
-      { title: 'Launchpad', component: LaunchpadPage, icon: 'planet', color: '' }
+      { title: 'Capsules', component: CapsulesPage,  icon: 'calendar', color: 'dark' },
+      { title: 'Launchpad', component: LaunchpadPage, icon: 'planet', color: '' },
+      { title: 'Launches', component: TabslaunchesPage,  icon: 'calendar', color: 'dark' },
+
     ];
 
   }
