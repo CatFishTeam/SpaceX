@@ -16,6 +16,7 @@ import {DetailLaunchPage} from "../detail-launch/detail-launch";
   selector : 'page-launches-past',
   templateUrl : 'launches-past.html',
 })
+
 export class LaunchesPastPage {
 
   launches : any;
