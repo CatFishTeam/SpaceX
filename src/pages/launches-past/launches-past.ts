@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {Component, NgModule} from '@angular/core';
+import {IonicPage, IonicPageModule, NavController, NavParams} from 'ionic-angular';
 import { SpaceXapiProvider } from "../../providers/space-xapi/space-xapi";
 import {DetailRocketPage} from "../detail-rocket/detail-rocket";
 import {DetailLaunchPage} from "../detail-launch/detail-launch";
+import {HomePage} from "../home/home";
 
 /**
  * Generated class for the LaunchesPastPage page.
@@ -16,6 +17,14 @@ import {DetailLaunchPage} from "../detail-launch/detail-launch";
   selector : 'page-launches-past',
   templateUrl : 'launches-past.html',
 })
+
+
+@NgModule({
+  declarations: [HomePage],
+  imports: [IonicPageModule.forChild(HomePage)],
+  entryComponents: [HomePage],
+})
+
 export class LaunchesPastPage {
 
   launches : any;
