@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {Component, NgModule} from '@angular/core';
+import { IonicPage, IonicPageModule, NavController, NavParams } from 'ionic-angular';
 import { SpaceXapiProvider } from '../../providers/space-xapi/space-xapi';
 
 /**
@@ -10,6 +10,19 @@ import { SpaceXapiProvider } from '../../providers/space-xapi/space-xapi';
  */
 
 @IonicPage()
+
+@NgModule({
+  declarations: [
+    DetailRocketPage
+  ],
+  imports: [
+    IonicPageModule.forChild(DetailRocketPage)
+  ],
+  entryComponents: [
+    DetailRocketPage
+  ]
+})
+
 @Component({
   selector: 'page-detail-rocket',
   templateUrl: 'detail-rocket.html',

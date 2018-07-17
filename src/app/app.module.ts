@@ -7,17 +7,19 @@ import { HomePage } from '../pages/home/home';
 import { TabslaunchesPage } from "../pages/tabslaunches/tabslaunches";
 import { LaunchesPastPage } from "../pages/launches-past/launches-past";
 import { LaunchesFuturPage } from "../pages/launches-futur/launches-futur";
-
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { LaunchpadPage } from '../pages/launchpad/launchpad';
 import { DetailLaunchpadPage } from '../pages/detail-launchpad/detail-launchpad';
 import { SpaceXapiProvider } from '../providers/space-xapi/space-xapi';
 import { RocketsPage } from "../pages/rockets/rockets";
-import {DetailRocketPage} from "../pages/detail-rocket/detail-rocket";
-import {AboutPage} from "../pages/about/about";
+import { AboutPage } from "../pages/about/about";
+import { DetailRocketPage } from "../pages/detail-rocket/detail-rocket";
+import { DetailLaunchPage } from "../pages/detail-launch/detail-launch";
+import { CapsulesPage } from "../pages/capsules/capsules";
+import { CapsuleDetailPage } from "../pages/detail-capsule/capsule-detail";
 
-import {HttpClient, HttpClientModule} from "@angular/common/http";
+import { HttpClientModule } from "@angular/common/http";
 import { NativePageTransitions } from '@ionic-native/native-page-transitions';
 
 @NgModule({
@@ -30,8 +32,11 @@ import { NativePageTransitions } from '@ionic-native/native-page-transitions';
     DetailRocketPage,
     LaunchesPastPage,
     LaunchesFuturPage,
+    AboutPage,
+    DetailLaunchPage,
     TabslaunchesPage,
-    AboutPage
+    CapsulesPage,
+    CapsuleDetailPage
   ],
   imports: [
     BrowserModule,
@@ -48,13 +53,16 @@ import { NativePageTransitions } from '@ionic-native/native-page-transitions';
     DetailRocketPage,
     LaunchesPastPage,
     LaunchesFuturPage,
+    AboutPage,
+    DetailLaunchPage,
     TabslaunchesPage,
-    AboutPage
+    CapsulesPage,
+    CapsuleDetailPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
     SpaceXapiProvider,
     NativePageTransitions
   ]
