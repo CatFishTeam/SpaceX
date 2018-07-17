@@ -30,7 +30,7 @@
     </ion-card-header>
     <ion-card-content class="rocket-content item item-body">
       <ion-list>
-        <ion-list-header>Specs</ion-list-header>
+        <ion-list-header color="primary">Specs</ion-list-header>
         <!-- Pays -->
         <ion-item color="light">
           <div class="row">
@@ -50,6 +50,74 @@
           <div class="row">
             <span class="col-one">Height</span>
             <span class="col-two">{{ rocket.height.meters }} m</span>
+          </div>
+        </ion-item>
+        <!-- # d'étages -->
+        <ion-item>
+          <div class="row">
+            <span class="col-one"># of Stages</span>
+            <span class="col-two">{{ rocket.stages }}</span>
+          </div>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+
+    <ion-card-content class="rocket-content item item-body">
+      <ion-list>
+        <ion-list-header color="primary">Payloads Weight</ion-list-header>
+        <ion-item-group color="light" *ngFor="let payload of rocket.payload_weights">
+          <ion-item>
+            <div class="row">
+              <span class="col-one">Name</span>
+              <span class="col-two">{{ payload.name }}</span>
+            </div>
+          </ion-item>
+          <ion-item class="row" color="light">
+            <div class="row">
+              <span class="col-one">Weight</span>
+              <span class="col-two">{{ payload.kg }} kg</span>
+            </div>
+          </ion-item>
+          <ion-item-divider></ion-item-divider>
+        </ion-item-group>
+      </ion-list>
+    </ion-card-content>
+
+    <ion-card-content class="rocket-content item item-body">
+      <ion-list>
+        <ion-list-header color="primary">Engines</ion-list-header>
+        <!-- Nombre de moteurs -->
+        <ion-item color="light">
+          <div class="row">
+            <span class="col-one">Number</span>
+            <span class="col-two">{{ rocket.engines.number }}</span>
+          </div>
+        </ion-item>
+        <!-- Type de moteur -->
+        <ion-item>
+          <div class="row">
+            <span class="col-one">Type</span>
+            <span class="col-two">{{ rocket.engines.type | capitalize }}</span>
+          </div>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+
+    <ion-card-content class="rocket-content item item-body">
+      <ion-list>
+        <ion-list-header color="primary">Landing Legs</ion-list-header>
+        <!-- Nombre de pieds d'atterrissage -->
+        <ion-item color="light">
+          <div class="row">
+            <span class="col-one">Number</span>
+            <span class="col-two">{{ rocket.landing_legs.number }}</span>
+          </div>
+        </ion-item>
+        <!-- Matériaux des pieds -->
+        <ion-item>
+          <div class="row">
+            <span class="col-one">Material</span>
+            <span class="col-two">{{ rocket.landing_legs.material | capitalize }}</span>
           </div>
         </ion-item>
       </ion-list>

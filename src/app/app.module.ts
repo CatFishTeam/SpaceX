@@ -21,6 +21,7 @@ import { CapsuleDetailPage } from "../pages/detail-capsule/capsule-detail";
 
 import { HttpClientModule } from "@angular/common/http";
 import { NativePageTransitions } from '@ionic-native/native-page-transitions';
+import {CapitalizePipe} from "./capitalize.pipe";
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { NativePageTransitions } from '@ionic-native/native-page-transitions';
     DetailLaunchPage,
     TabslaunchesPage,
     CapsulesPage,
-    CapsuleDetailPage
+    CapsuleDetailPage,
+    CapitalizePipe
   ],
   imports: [
     BrowserModule,
