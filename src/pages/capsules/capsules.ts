@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
-import {IonicPage, ModalController, NavController, NavParams} from 'ionic-angular';
+import { IonicPage, ModalController, NavController, NavParams } from 'ionic-angular';
 import { SpaceXapiProvider } from '../../providers/space-xapi/space-xapi';
 
 import {ICapsules} from "../../services/ICapsules";
-import {DetailLaunchpadPage} from "../detail-launchpad/detail-launchpad";
 import {CapsuleDetailPage} from "../detail-capsule/capsule-detail";
 
 /**
@@ -19,7 +18,7 @@ import {CapsuleDetailPage} from "../detail-capsule/capsule-detail";
   templateUrl: 'capsules.html',
 })
 export class CapsulesPage {
-  capsules:ICapsules;
+  capsules: ICapsules[];
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public api: SpaceXapiProvider, public modalCtrl: ModalController) {
     this.api.getCapsules().subscribe(data => this.capsules = data);
