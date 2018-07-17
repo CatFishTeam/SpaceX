@@ -16,8 +16,9 @@ import { RocketsPage } from "../pages/rockets/rockets";
 import { AboutPage } from "../pages/about/about";
 import { DetailRocketPage } from "../pages/detail-rocket/detail-rocket";
 import { DetailLaunchPage } from "../pages/detail-launch/detail-launch";
+
 import { CapsulesPage } from "../pages/capsules/capsules";
-import { DetailCapsulePage } from "../pages/detail-capsule/detail-capsule";
+import { DetailCapsulePage } from "../pages/detail-capsule/detail-capsule"
 
 import { HttpClientModule } from "@angular/common/http";
 import { NativePageTransitions } from '@ionic-native/native-page-transitions';

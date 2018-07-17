@@ -1,14 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import {SpaceXapiProvider} from "../../providers/space-xapi/space-xapi";
-import {ICapsules} from "../../services/ICapsules";
-
-/**
- * Generated class for the CapsuleDetailPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { IonicPage, NavController, NavParams, Platform, ViewController } from 'ionic-angular';
+import { SpaceXapiProvider } from "../../providers/space-xapi/space-xapi";
+import { ICapsules } from "../../services/ICapsules";
 
 @IonicPage()
 @Component({
@@ -17,11 +10,15 @@ import {ICapsules} from "../../services/ICapsules";
 })
 export class DetailCapsulePage {
 
-  capsuleId : string = this.navParams.get('id').capsuleId;
-  capsule : any;
+  capsuleId : string = this.navParams.get('id');
+  capsule : ICapsules;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public api: SpaceXapiProvider) {
-    this.api.getCapsule(this.capsuleId).subscribe(data => { this.capsule = data[0] });
+  constructor(public navCtrl: NavController, public navParams: NavParams, public platform: Platform, public viewCtrl: ViewController, public api: SpaceXapiProvider) {
+    console.log(this.capsuleId);
+    this.api.getCapsule(this.capsuleId).subscribe(data => this.capsule = data,
+      ()=>{ console.log(this.capsule) },
+      ()=>{ console.log(this.capsule) }
+      );
   }
 
   ionViewDidLoad() {

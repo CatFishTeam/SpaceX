@@ -24,7 +24,9 @@ export class DetailLaunchPage {
   launch : any;
   videoUrl : any;
 
+
   constructor(public navCtrl: NavController, public navParams: NavParams, public api: SpaceXapiProvider, public sanitizer: DomSanitizer) {
+
   }
 
   rocketDetail(rocketId) {

@@ -15,7 +15,7 @@
 
 <ion-content>
   <ion-list>
-    <a ion-item *ngFor="let capsule of capsules" (click)="openModal({capsuleId: capsule?.id})">
+    <a ion-item *ngFor="let capsule of capsules" (click)="openModal(capsule?.id)">
       <span *ngIf="capsule.active == true">
           <ion-badge color="secondary">&nbsp;</ion-badge>
       </span>
