@@ -44,7 +44,6 @@ export class TabslaunchesPage {
   }
 
   public transition(e):void {
-    console.log(e);
     let options: NativeTransitionOptions = {
       direction:this.getAnimationDirection(e.index),
       duration: 250,

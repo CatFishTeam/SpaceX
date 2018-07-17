@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { IonicPage, ModalController, NavController, NavParams } from 'ionic-angular';
 import { SpaceXapiProvider } from '../../providers/space-xapi/space-xapi';
 
-import {ICapsules} from "../../services/ICapsules";
-import {CapsuleDetailPage} from "../detail-capsule/capsule-detail";
+import { ICapsules } from "../../services/ICapsules";
+import { DetailCapsulePage } from "../detail-capsule/detail-capsule";
 
 /**
  * Generated class for the CapsulesPage page.
@@ -25,12 +25,10 @@ export class CapsulesPage {
   }
 
   openModal(capsuleId) {
-    this.navCtrl.push(CapsuleDetailPage, { id: capsuleId });
+    this.navCtrl.push(DetailCapsulePage, { id: capsuleId });
   }
 
   ionViewDidLoad() {
-    //this.navCtrl.push()
-    console.log('ionViewDidLoad CapsulesPage');
   }
 
 }

@@ -72,8 +72,6 @@ export class LaunchesPastPage {
   lanchesSuccesFilter(ev: any) {
     // Reset items back to all of the items
 
-    console.log(ev);
-
     // set val to the value of the searchbar
     const val = ev.checked;
 

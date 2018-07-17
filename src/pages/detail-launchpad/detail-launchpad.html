@@ -5,17 +5,9 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-  <ion-toolbar>
-      <ion-title>
-        Description
-      </ion-title>
-      <ion-buttons start>
-        <button ion-button (click)="dismiss()">
-          <span ion-text color="primary" showWhen="ios">Back</span>
-          <ion-icon name="md-close" showWhen="android,windows"></ion-icon>
-        </button>
-      </ion-buttons>
-    </ion-toolbar>
+    <ion-navbar>
+      <ion-title *ngIf="launchpad">{{ launchpad.full_name }}</ion-title>
+    </ion-navbar>
   </ion-header>
 
 <ion-content padding>
@@ -41,8 +33,8 @@
     </ion-card-header>
     <ion-card-content class="launchpad-content item item-body">
       <ion-list>
-        <ion-list-header>Launches</ion-list-header>
-        <p ion-item *ngFor="let vehicle of launchpad.vehicles_launched" (click)="launchDetails({launchdId: vehicle?.id})">
+        <ion-list-header>Rockets</ion-list-header>
+        <p ion-item *ngFor="let vehicle of launchpad.vehicles_launched" (click)="rocketDetail(vehicle)">
           {{vehicle}}
         </p>
       </ion-list>
