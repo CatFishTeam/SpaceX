@@ -1,3 +1,8 @@
 page-launchpad {
 
 }
+ion-badge {
+  &[color=warning] {
+    background-color: orange;
+  }
+}
