@@ -1,5 +1,5 @@
-import {Component, NgModule, ViewChild} from '@angular/core';
-import {IonicPageModule, Nav, Platform} from 'ionic-angular';
+import {Component, ViewChild} from '@angular/core';
+import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
@@ -9,8 +9,6 @@ import { CapsulesPage } from "../pages/capsules/capsules";
 import { LaunchpadPage } from '../pages/launchpad/launchpad';
 import { TabslaunchesPage } from '../pages/tabslaunches/tabslaunches';
 
-import { Deeplinks } from '@ionic-native/deeplinks';
-
 @Component({
   templateUrl: 'app.html'
 })
@@ -18,27 +16,21 @@ import { Deeplinks } from '@ionic-native/deeplinks';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = HomePage;
+  rootPage: any = CapsulesPage;
 
   pages: Array<{title: string, component: any, icon: string, color: string}>;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, private deeplinks: Deeplinks) {
+  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
     this.initializeApp();
 
-    // used for an example of ngFor and navigation
-    /*
-    * `icon` : https://ionicframework.com/docs/ionicons/
-    * `color` : voir dans src/theme/variables.scss > section `$colors`
-    * */
     this.pages = [
       { title: 'Home', component: HomePage, icon: 'home', color: 'primary' },
+      { title: 'Launches', component: TabslaunchesPage,  icon: 'calendar', color: 'dark' },
       { title: 'Rockets', component: RocketsPage, icon: 'ios-jet', color: 'danger' },
       { title: 'Capsules', component: CapsulesPage,  icon: 'calendar', color: 'dark' },
-      { title: 'Launchpad', component: LaunchpadPage, icon: 'planet', color: '' },
-      { title: 'Launches', component: TabslaunchesPage,  icon: 'calendar', color: 'dark' },
-
+      { title: 'Launchpad', component: LaunchpadPage, icon: 'planet', color: 'green' },
     ];
-
+    /*
     this.platform.ready().then(() => {
       this.deeplinks.route({
         '/about-us': HomePage,
@@ -54,12 +46,11 @@ export class MyApp {
           console.error('Got a deeplink that didn\'t match', nomatch);
         });
     });
+    */
   }
 
   initializeApp() {
     this.platform.ready().then(() => {
-      // Okay, so the platform is ready and our plugins are available.
-      // Here you can do any higher level native things you might need.
       this.statusBar.styleDefault();
       this.splashScreen.hide();
     });

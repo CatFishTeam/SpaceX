@@ -1,9 +1,7 @@
-import {Component, NgModule} from '@angular/core';
-import {IonicPage, IonicPageModule, NavController, NavParams} from 'ionic-angular';
+import {Component} from '@angular/core';
+import {IonicPage, NavController, NavParams} from 'ionic-angular';
 import { SpaceXapiProvider } from "../../providers/space-xapi/space-xapi";
-import {DetailRocketPage} from "../detail-rocket/detail-rocket";
-import {DetailLaunchPage} from "../detail-launch/detail-launch";
-import {HomePage} from "../home/home";
+import { DetailLaunchPage } from "../detail-launch/detail-launch";
 
 /**
  * Generated class for the LaunchesPastPage page.

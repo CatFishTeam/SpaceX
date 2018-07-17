@@ -17,9 +17,9 @@ import { DetailRocketPage } from "../pages/detail-rocket/detail-rocket";
 import { DetailLaunchPage } from "../pages/detail-launch/detail-launch";
 
 import { CapsulesPage } from "../pages/capsules/capsules";
-import { CapsuleDetailPage } from "../pages/capsule-detail/capsule-detail";
+import { CapsuleDetailPage } from "../pages/detail-capsule/capsule-detail";
 
-import {HttpClientModule} from "@angular/common/http";
+import { HttpClientModule } from "@angular/common/http";
 import { NativePageTransitions } from '@ionic-native/native-page-transitions';
 
 @NgModule({

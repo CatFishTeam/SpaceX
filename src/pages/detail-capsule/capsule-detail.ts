@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {SpaceXapiProvider} from "../../providers/space-xapi/space-xapi";
 
 /**
  * Generated class for the CapsuleDetailPage page.
@@ -15,11 +16,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class CapsuleDetailPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  capsuleId : string = this.navParams.get('id').capsuleId;
+  capsule : any;
+
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public api: SpaceXapiProvider) {
+    console.log(this.capsuleId);
+    this.api.getLaunchpad(this.capsuleId).subscribe(data => this.capsule = data);
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad CapsuleDetailPage');
   }
 
 }

@@ -3,7 +3,8 @@ import {IonicPage, ModalController, NavController, NavParams} from 'ionic-angula
 import { SpaceXapiProvider } from '../../providers/space-xapi/space-xapi';
 
 import {ICapsules} from "../../services/ICapsules";
-import { CapsuleDetailPage } from "../capsule-detail/capsule-detail";
+import {DetailLaunchpadPage} from "../detail-launchpad/detail-launchpad";
+import {CapsuleDetailPage} from "../detail-capsule/capsule-detail";
 
 /**
  * Generated class for the CapsulesPage page.
@@ -22,6 +23,10 @@ export class CapsulesPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public api: SpaceXapiProvider, public modalCtrl: ModalController) {
     this.api.getCapsules().subscribe(data => this.capsules = data);
+  }
+
+  openModal(capsuleId) {
+    this.navCtrl.push(CapsuleDetailPage, { id: capsuleId });
   }
 
   ionViewDidLoad() {
