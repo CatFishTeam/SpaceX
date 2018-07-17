@@ -54,31 +54,41 @@
         <ion-item color="light">
           <div class="row">
             <span class="col-one">Core</span>
-            <span class="col-two">{{ launch.reuse.core }}</span>
+            <span class="col-two" *ngIf="launch.reuse.core; else inactive">
+              <ion-badge color="secondary">&nbsp;</ion-badge>
+            </span>
           </div>
         </ion-item>
         <ion-item>
           <div class="row">
             <span class="col-one">Side Core 1</span>
-            <span class="col-two">{{ launch.reuse.side_core1 }}</span>
+            <span class="col-two" *ngIf="launch.reuse.side_core1; else inactive">
+              <ion-badge color="secondary">&nbsp;</ion-badge>
+            </span>
           </div>
         </ion-item>
         <ion-item color="light">
           <div class="row">
             <span class="col-one">Side Core 2</span>
-            <span class="col-two">{{ launch.reuse.side_core2 }}</span>
+            <span class="col-two" *ngIf="launch.reuse.side_core2; else inactive">
+              <ion-badge color="secondary">&nbsp;</ion-badge>
+            </span>
           </div>
         </ion-item>
         <ion-item>
           <div class="row">
             <span class="col-one">Fairings</span>
-            <span class="col-two">{{ launch.reuse.fairings }}</span>
+            <span class="col-two" *ngIf="launch.reuse.fairings; else inactive">
+              <ion-badge color="secondary">&nbsp;</ion-badge>
+            </span>
           </div>
         </ion-item>
         <ion-item color="light">
           <div class="row">
             <span class="col-one">Capsule</span>
-            <span class="col-two">{{ launch.reuse.capsule }}</span>
+            <span class="col-two" *ngIf="launch.reuse.capsule; else inactive">
+              <ion-badge color="secondary">&nbsp;</ion-badge>
+            </span>
           </div>
         </ion-item>
       </ion-list>
