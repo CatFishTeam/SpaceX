@@ -30,7 +30,7 @@ export class SpaceXapiProvider {
     let apiURL = `${this.apiRoot}/info`;
     return this.http.get(apiURL);
   }
-  
+
   getLaunchpads(): Observable<ILaunchpads[]> {
     let apiURL = `${this.apiRoot}/launchpads`;
     console.log(this.http.get<ILaunchpads[]>(apiURL).subscribe((res) => {
