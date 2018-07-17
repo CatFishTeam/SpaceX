@@ -16,29 +16,30 @@ import { RocketsPage } from "../pages/rockets/rockets";
 import { AboutPage } from "../pages/about/about";
 import { DetailRocketPage } from "../pages/detail-rocket/detail-rocket";
 import { DetailLaunchPage } from "../pages/detail-launch/detail-launch";
+
 import { CapsulesPage } from "../pages/capsules/capsules";
-import { CapsuleDetailPage } from "../pages/detail-capsule/capsule-detail";
+import { DetailCapsulePage } from "../pages/detail-capsule/detail-capsule"
 
 import { HttpClientModule } from "@angular/common/http";
 import { NativePageTransitions } from '@ionic-native/native-page-transitions';
-import {CapitalizePipe} from "./capitalize.pipe";
+import { CapitalizePipe } from "./capitalize.pipe";
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    LaunchpadPage,
-    DetailLaunchpadPage,
-    RocketsPage,
-    DetailRocketPage,
     LaunchesPastPage,
     LaunchesFuturPage,
     AboutPage,
     DetailLaunchPage,
     TabslaunchesPage,
+    LaunchpadPage,
+    DetailLaunchpadPage,
+    RocketsPage,
+    DetailRocketPage,
     CapsulesPage,
-    CapsuleDetailPage,
-    CapitalizePipe
+    CapitalizePipe,
+    DetailCapsulePage
   ],
   imports: [
     BrowserModule,
@@ -49,6 +50,7 @@ import {CapitalizePipe} from "./capitalize.pipe";
   entryComponents: [
     MyApp,
     HomePage,
+    TabslaunchesPage,
     LaunchpadPage,
     DetailLaunchpadPage,
     RocketsPage,
@@ -57,9 +59,8 @@ import {CapitalizePipe} from "./capitalize.pipe";
     LaunchesFuturPage,
     AboutPage,
     DetailLaunchPage,
-    TabslaunchesPage,
     CapsulesPage,
-    CapsuleDetailPage
+    DetailCapsulePage
   ],
   providers: [
     StatusBar,

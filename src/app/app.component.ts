@@ -8,7 +8,7 @@ import { RocketsPage } from "../pages/rockets/rockets";
 import { CapsulesPage } from "../pages/capsules/capsules";
 import { LaunchpadPage } from '../pages/launchpad/launchpad';
 import { TabslaunchesPage } from '../pages/tabslaunches/tabslaunches';
-import {AboutPage} from "../pages/about/about";
+import { AboutPage } from "../pages/about/about";
 
 @Component({
   templateUrl: 'app.html'
@@ -17,7 +17,7 @@ import {AboutPage} from "../pages/about/about";
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = CapsulesPage;
+  rootPage: any = HomePage;
 
   pages: Array<{title: string, component: any, icon: string, color: string, img: string}>;
 

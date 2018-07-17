@@ -33,6 +33,7 @@ export class DetailRocketPage {
   rocket : any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public api: SpaceXapiProvider) {
+
   }
 
   ionViewDidLoad() {

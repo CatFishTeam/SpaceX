@@ -19,4 +19,7 @@
   </ul>
   <p *ngIf="launch?.details!==null">{{launch?.details}}</p>
   <img src="{{launch?.links.mission_patch}}" *ngIf="launch?.links.mission_patch!==null">
+  <button ion-button round color="secondary" (click)="nextLaunch()" full>Information on next launch</button>
+  <hr>
+  <button ion-button round color="light" (click)="lastLaunch()" full>See last launch</button>
 </ion-content>
