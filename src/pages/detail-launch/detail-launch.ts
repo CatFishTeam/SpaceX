@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { SpaceXapiProvider } from "../../providers/space-xapi/space-xapi";
 import { DetailRocketPage } from "../detail-rocket/detail-rocket";
 import { DetailLaunchpadPage } from "../detail-launchpad/detail-launchpad";
+import { DomSanitizer } from '@angular/platform-browser';
 
 
 /**
@@ -21,8 +22,11 @@ export class DetailLaunchPage {
 
   launchId : string = this.navParams.get('id').launchId;
   launch : any;
+  videoUrl : any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public api: SpaceXapiProvider) {
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public api: SpaceXapiProvider, public sanitizer: DomSanitizer) {
+
   }
 
   rocketDetail(rocketId) {
@@ -35,6 +39,14 @@ export class DetailLaunchPage {
 
   ionViewDidLoad() {
     this.api.getLaunch(this.launchId).subscribe(data => this.launch = data[0]);
-  }
 
+    this.api.getLaunch(this.launchId).subscribe(data => {
+        this.launch = data[0]
+      },
+      error => console.log("Error", error),
+      () => {
+        this.videoUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.launch.links.video_link.replace("watch?v=", "embed/"));
+        console.log(this.videoUrl);
+      });
+  }
 }
