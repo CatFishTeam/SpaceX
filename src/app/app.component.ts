@@ -8,6 +8,7 @@ import { RocketsPage } from "../pages/rockets/rockets";
 import { CapsulesPage } from "../pages/capsules/capsules";
 import { LaunchpadPage } from '../pages/launchpad/launchpad';
 import { TabslaunchesPage } from '../pages/tabslaunches/tabslaunches';
+import {AboutPage} from "../pages/about/about";
 
 @Component({
   templateUrl: 'app.html'
@@ -18,7 +19,7 @@ export class MyApp {
 
   rootPage: any = CapsulesPage;
 
-  pages: Array<{title: string, component: any, icon: string, color: string}>;
+  pages: Array<{title: string, component: any, icon: string, color: string, img: string}>;
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
     this.initializeApp();
@@ -29,6 +30,7 @@ export class MyApp {
       { title: 'Rockets', component: RocketsPage, icon: 'ios-jet', color: 'danger' },
       { title: 'Capsules', component: CapsulesPage,  icon: 'calendar', color: 'dark' },
       { title: 'Launchpad', component: LaunchpadPage, icon: 'planet', color: 'green' },
+      { title: 'About', component: AboutPage,  icon: '', color: '', img: 'assets/imgs/spacex-logo.svg' },
     ];
     /*
     this.platform.ready().then(() => {

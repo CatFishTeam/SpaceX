@@ -20,3 +20,11 @@ ion-icon {
     color: red;
   }
 }
+
+.menu-item {
+  display: flex;
+
+  &__icon {
+    width: 45px;
+  }
+}

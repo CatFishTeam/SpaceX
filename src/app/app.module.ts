@@ -13,9 +13,9 @@ import { LaunchpadPage } from '../pages/launchpad/launchpad';
 import { DetailLaunchpadPage } from '../pages/detail-launchpad/detail-launchpad';
 import { SpaceXapiProvider } from '../providers/space-xapi/space-xapi';
 import { RocketsPage } from "../pages/rockets/rockets";
+import { AboutPage } from "../pages/about/about";
 import { DetailRocketPage } from "../pages/detail-rocket/detail-rocket";
 import { DetailLaunchPage } from "../pages/detail-launch/detail-launch";
-
 import { CapsulesPage } from "../pages/capsules/capsules";
 import { CapsuleDetailPage } from "../pages/detail-capsule/capsule-detail";
 
@@ -32,6 +32,7 @@ import { NativePageTransitions } from '@ionic-native/native-page-transitions';
     DetailRocketPage,
     LaunchesPastPage,
     LaunchesFuturPage,
+    AboutPage,
     DetailLaunchPage,
     TabslaunchesPage,
     CapsulesPage,
@@ -52,6 +53,7 @@ import { NativePageTransitions } from '@ionic-native/native-page-transitions';
     DetailRocketPage,
     LaunchesPastPage,
     LaunchesFuturPage,
+    AboutPage,
     DetailLaunchPage,
     TabslaunchesPage,
     CapsulesPage,
