@@ -17,7 +17,7 @@ import { AboutPage } from "../pages/about/about";
 import { DetailRocketPage } from "../pages/detail-rocket/detail-rocket";
 import { DetailLaunchPage } from "../pages/detail-launch/detail-launch";
 import { CapsulesPage } from "../pages/capsules/capsules";
-import { CapsuleDetailPage } from "../pages/detail-capsule/capsule-detail";
+import { DetailCapsulePage } from "../pages/detail-capsule/detail-capsule";
 
 import { HttpClientModule } from "@angular/common/http";
 import { NativePageTransitions } from '@ionic-native/native-page-transitions';
@@ -26,17 +26,17 @@ import { NativePageTransitions } from '@ionic-native/native-page-transitions';
   declarations: [
     MyApp,
     HomePage,
-    LaunchpadPage,
-    DetailLaunchpadPage,
-    RocketsPage,
-    DetailRocketPage,
     LaunchesPastPage,
     LaunchesFuturPage,
     AboutPage,
     DetailLaunchPage,
     TabslaunchesPage,
+    LaunchpadPage,
+    DetailLaunchpadPage,
+    RocketsPage,
+    DetailRocketPage,
     CapsulesPage,
-    CapsuleDetailPage
+    DetailCapsulePage
   ],
   imports: [
     BrowserModule,
@@ -47,6 +47,7 @@ import { NativePageTransitions } from '@ionic-native/native-page-transitions';
   entryComponents: [
     MyApp,
     HomePage,
+    TabslaunchesPage,
     LaunchpadPage,
     DetailLaunchpadPage,
     RocketsPage,
@@ -55,9 +56,8 @@ import { NativePageTransitions } from '@ionic-native/native-page-transitions';
     LaunchesFuturPage,
     AboutPage,
     DetailLaunchPage,
-    TabslaunchesPage,
     CapsulesPage,
-    CapsuleDetailPage
+    DetailCapsulePage
   ],
   providers: [
     StatusBar,
