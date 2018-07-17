@@ -23,6 +23,8 @@ export class DetailLaunchPage {
   launch : any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public api: SpaceXapiProvider) {
+    console.log(this.navParams.get('id'));
+    console.log(this.launchId);
   }
 
   rocketDetail(rocketId) {

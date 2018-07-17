@@ -1,6 +1,7 @@
 import {Component } from '@angular/core';
 import { NavController} from 'ionic-angular';
 import { SpaceXapiProvider } from '../../providers/space-xapi/space-xapi';
+import { DetailLaunchPage } from "../detail-launch/detail-launch";
 
 @Component({
   selector: 'page-home',
@@ -8,7 +9,8 @@ import { SpaceXapiProvider } from '../../providers/space-xapi/space-xapi';
 })
 
 export class HomePage {
-  launch:any;
+  launch: any;
+  lastLaunchId: any;
   date:any;
   interval:Number;
   days:Number;
@@ -20,8 +22,28 @@ export class HomePage {
     public api: SpaceXapiProvider
   ){}
 
+  launchDetails(launchId){
+    this.navCtrl.push(DetailLaunchPage, { id: launchId });
+  }
+
+  lastLaunch(){
+      this.api.getLastLaunche().subscribe( data => { this.lastLaunchId = data },
+        error => console.log("Error", error),
+        () => {
+          this.navCtrl.push(DetailLaunchPage, { id: {launchId: this.lastLaunchId.flight_number}});
+        })
+  }
+
+  nextLaunch(){
+    this.api.getNextLaunche().subscribe( data => { this.lastLaunchId = data },
+      error => console.log("Error", error),
+      () => {
+        this.navCtrl.push(DetailLaunchPage, { id: {launchId: this.lastLaunchId.flight_number}});
+      })
+  }
+
   ionViewDidLoad(){
-    this.api.getNextLaunche().subscribe( data => {this.launch = data },
+    this.api.getNextLaunche().subscribe( data => { this.launch = data },
     error => console.log("Error: ", error),
     () => {
       this.date = this.launch.launch_date_unix - Math.round(Date.now() / 1000);
