@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
-import {IonicPageModule, NavController, NavParams} from 'ionic-angular';
-import { DetailCapsulePage } from '../detail-capsule/detail-capsule'
-
+import { IonicPageModule } from 'ionic-angular';
+import { DetailCapsulePage } from './detail-capsule';
 
 @NgModule({
   declarations: [
@@ -9,6 +8,6 @@ import { DetailCapsulePage } from '../detail-capsule/detail-capsule'
   ],
   imports: [
     IonicPageModule.forChild(DetailCapsulePage),
-  ]
+  ],
 })
-export class DetailCapsulePageModule{}
+export class DetailCapsulePageModule {}

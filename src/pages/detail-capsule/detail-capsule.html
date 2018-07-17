@@ -1,31 +1,18 @@
 <!--
-  Generated template for the DetailRocketPage page.
+  Generated template for the DetailCapsulePage page.
 
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
-
-
 <ion-header>
+
   <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>Capsule {{ capsule.name }}</ion-title>
+    <ion-title>{{capsule.name}}</ion-title>
   </ion-navbar>
+
 </ion-header>
 
+
 <ion-content padding>
-  <ion-card *ngIf="capsule" class="single-capsule">
-    <ion-card-header class="capsule-header item item-divider">
-      <ion-card-title ion-text color="primary">
-          <span *ngIf="capsule.active; else inactive">
-            <ion-badge color="secondary">&nbsp;</ion-badge>
-          </span>
-        <ng-template #inactive><ion-badge color="danger">&nbsp;</ion-badge></ng-template>
-        {{ capsule.name }}
-      </ion-card-title>
-    </ion-card-header>
-  </ion-card>
 
 </ion-content>

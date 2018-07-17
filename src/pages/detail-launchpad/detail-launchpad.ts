@@ -3,7 +3,6 @@ import { IonicPage, NavController, NavParams, Platform, ViewController } from 'i
 import { SpaceXapiProvider } from '../../providers/space-xapi/space-xapi';
 import { DetailLaunchPage } from "../detail-launch/detail-launch";
 
-
 @IonicPage()
 @Component({
   selector: 'page-detail-launchpad',
@@ -17,7 +16,6 @@ export class DetailLaunchpadPage {
   constructor(public navCtrl: NavController, public navParams: NavParams, public platform: Platform, public viewCtrl: ViewController, public api: SpaceXapiProvider) {
     this.api.getLaunchpad(this.launchpadId).subscribe(data => this.launchpad = data);
   }
-
 
   launchDetails(launchId){
     this.navCtrl.push(DetailLaunchPage, { id: launchId });
