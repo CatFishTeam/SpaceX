@@ -86,4 +86,11 @@
     <engine name="android" spec="~7.0.0" />
     <allow-navigation href="http://10.33.1.19:8100" />
     <allow-navigation href="http://192.168.43.253:8100" />
+    <plugin name="ionic-plugin-deeplinks" spec="^1.0.17">
+        <variable name="URL_SCHEME" value="myapp" />
+        <variable name="DEEPLINK_SCHEME" value="https" />
+        <variable name="DEEPLINK_HOST" value="example.com" />
+    </plugin>
+    <plugin name="cordova-plugin-youtube-video-player" spec="^1.0.6" />
+    <engine name="browser" spec="~5.0.3" />
 </widget>

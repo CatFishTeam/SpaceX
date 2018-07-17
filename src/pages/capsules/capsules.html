@@ -1,0 +1,29 @@
+<!--
+  Generated template for the LaunchpadPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Capsules</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <a ion-item *ngFor="let capsule of capsules" (click)="openModal({capsuleId: capsule?.id})">
+      <span *ngIf="capsule.active == true">
+          <ion-badge color="secondary">&nbsp;</ion-badge>
+      </span>
+      <span *ngIf="capsule.active == false">
+          <ion-badge color="danger">&nbsp;</ion-badge>
+      </span>
+      {{capsule?.name}}
+    </a>
+  </ion-list>
+
+</ion-content>

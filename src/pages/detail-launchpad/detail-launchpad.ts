@@ -1,13 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, Platform, ViewController } from 'ionic-angular';
 import { SpaceXapiProvider } from '../../providers/space-xapi/space-xapi';
+import { DetailLaunchPage } from "../detail-launch/detail-launch";
 
-/**
- * Generated class for the DetailLaunchpadPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -16,12 +11,16 @@ import { SpaceXapiProvider } from '../../providers/space-xapi/space-xapi';
 })
 export class DetailLaunchpadPage {
 
-  launchpadId : string = this.params.get('id').launchpadId;
+  launchpadId : string = this.navParams.get('id').launchpadId;
   launchpad : any;
 
-  constructor(public platform: Platform, public params: NavParams, public viewCtrl: ViewController, public api: SpaceXapiProvider) {
-
+  constructor(public navCtrl: NavController, public navParams: NavParams, public platform: Platform, public viewCtrl: ViewController, public api: SpaceXapiProvider) {
     this.api.getLaunchpad(this.launchpadId).subscribe(data => this.launchpad = data);
+  }
+
+
+  launchDetails(launchId){
+    this.navCtrl.push(DetailLaunchPage, { id: launchId });
   }
 
   ionViewDidLoad() {

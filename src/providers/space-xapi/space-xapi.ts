@@ -4,8 +4,9 @@ import { Observable } from 'rxjs';
 import 'rxjs/add/operator/map';
 import { IRockets } from '../../services/IRockets';
 import { ILaunchpads } from '../../services/ILaunchpads';
-import {ILaunch} from "../../services/ILaunch";
+import { ILaunch } from "../../services/ILaunch";
 import { ILaunches } from '../../services/ILaunches';
+import { ICapsules } from "../../services/ICapsules";
 
 @Injectable()
 export class SpaceXapiProvider {
@@ -52,8 +53,8 @@ export class SpaceXapiProvider {
     return this.http.get<ILaunch>(apiURL);
   }
 
-  getLaunch(id) : Observable<ILaunch> {
-    let apiURL = `${this.apiRoot}/launches/all?flight_number=` + id;
+  getLaunch(name) : Observable<ILaunch> {
+    let apiURL = `${this.apiRoot}/launches/all?flight_number=` + name;
     return this.http.get<ILaunch>(apiURL);
   }
 
@@ -71,6 +72,19 @@ export class SpaceXapiProvider {
       console.log(res)
     }));
     return this.http.get<ILaunches>(apiURL);
+  }
+
+  getCapsules(): Observable<ICapsules[]> {
+    let apiURL = `${this.apiRoot}/capsules`;
+    console.log(this.http.get<ICapsules[]>(apiURL).subscribe((res) => {
+      console.log(res)
+    }));
+    return this.http.get<ICapsules[]>(apiURL);
+  }
+
+  getCapsule(name) : Observable<ICapsules> {
+    let apiURL = `${this.apiRoot}/capsules/` + name;
+    return this.http.get<ICapsules>(apiURL);
   }
 
 }

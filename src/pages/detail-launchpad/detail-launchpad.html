@@ -42,7 +42,7 @@
     <ion-card-content class="launchpad-content item item-body">
       <ion-list>
         <ion-list-header>Launches</ion-list-header>
-        <p ion-item *ngFor="let vehicle of launchpad.vehicles_launched">
+        <p ion-item *ngFor="let vehicle of launchpad.vehicles_launched" (click)="launchDetails({launchdId: vehicle?.id})">
           {{vehicle}}
         </p>
       </ion-list>

@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
 import { DetailLaunchpadPage } from '../detail-launchpad/detail-launchpad';
 import { SpaceXapiProvider } from '../../providers/space-xapi/space-xapi';
-import {DetailRocketPage} from "../detail-rocket/detail-rocket";
 
 /**
  * Generated class for the LaunchpadPage page.
@@ -28,10 +27,7 @@ export class LaunchpadPage {
   }
 
   openModal(launchpadId) {
-
     this.navCtrl.push(DetailLaunchpadPage, { id: launchpadId });
-    //let modal = this.modalCtrl.create(DetailLaunchpadPage, charNum);
-    //modal.present();
   }
 
 }

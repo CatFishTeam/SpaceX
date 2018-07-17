@@ -1,8 +1,7 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {Component} from '@angular/core';
+import {IonicPage, NavController, NavParams} from 'ionic-angular';
 import { SpaceXapiProvider } from "../../providers/space-xapi/space-xapi";
-import {DetailRocketPage} from "../detail-rocket/detail-rocket";
-import {DetailLaunchPage} from "../detail-launch/detail-launch";
+import { DetailLaunchPage } from "../detail-launch/detail-launch";
 
 /**
  * Generated class for the LaunchesPastPage page.
@@ -16,6 +15,7 @@ import {DetailLaunchPage} from "../detail-launch/detail-launch";
   selector : 'page-launches-past',
   templateUrl : 'launches-past.html',
 })
+
 export class LaunchesPastPage {
 
   launches : any;
