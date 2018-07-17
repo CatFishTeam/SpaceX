@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {SpaceXapiProvider} from "../../providers/space-xapi/space-xapi";
 
 /**
  * Generated class for the AboutPage page.
@@ -15,11 +16,13 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class AboutPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  company : any;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public api: SpaceXapiProvider) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad AboutPage');
+    this.api.getCompany().subscribe(data => this.company = data);
   }
 
 }

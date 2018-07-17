@@ -1,3 +1,48 @@
 page-about {
 
+  ion-header {
+
+  }
+
+  ion-content {
+
+    .spacex-logo {
+      width: 60%;
+      display: block;
+      margin: auto;
+    }
+
+    ion-card-title {
+      text-align: center;
+      font-size: 28px;
+    }
+
+    .description {
+      white-space: normal;
+      text-align: justify;
+      margin: 30px 0 20px;
+    }
+
+    ion-card-content {
+      &.item {
+        margin-top: 20px;
+      }
+
+      &.headquarters {
+        h3 {
+          font-size: 20px;
+          margin-bottom: 10px;
+        }
+      }
+
+      ion-list {
+        ion-item {
+          .row {
+            justify-content: space-between;
+          }
+        }
+      }
+    }
+  }
+
 }

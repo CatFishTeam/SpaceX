@@ -17,5 +17,50 @@
 
 
 <ion-content padding>
+  <img src="assets/imgs/spacex-logo.svg" class="spacex-logo" alt="SpaceX">
+  <ion-card *ngIf="company">
+    <ion-card-header class="company-header item item-divider">
+      <ion-card-title ion-text color="primary">
+        {{ company.name }}
+      </ion-card-title>
+      <div ion-text color="semi-dark-gray" class="description">
+        Founded by {{ company.founder }} in {{ company.founded }}
+      </div>
+      <div ion-text color="semi-dark-gray" class="description">
+        {{ company.summary }}
+      </div>
+    </ion-card-header>
+    <ion-card-content class="company-content headquarters item item-body">
+      <h3 ion-text color="primary">Headquarters</h3>
+      <div ion-text color="semi-dark-gray" class="">
+        {{ company.headquarters.address }},
+        {{ company.headquarters.city }},
+        {{ company.headquarters.state }}
+      </div>
+    </ion-card-content>
+    <ion-card-content class="company-content headquarters item item-body">
+      <h3 ion-text color="primary">More information</h3>
+      <ion-list>
+        <ion-item color="light">
+          <div class="row">
+            <span class="col-one"># of Vehicles</span>
+            <span class="col-two">{{ company.vehicles }}</span>
+          </div>
+        </ion-item>
+        <ion-item>
+          <div class="row">
+            <span class="col-one"># of Launch Sites</span>
+            <span class="col-two">{{ company.launch_sites }}</span>
+          </div>
+        </ion-item>
+        <ion-item color="light">
+          <div class="row">
+            <span class="col-one"># of Test Sites</span>
+            <span class="col-two">{{ company.test_sites }}</span>
+          </div>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
 
 </ion-content>

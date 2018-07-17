@@ -4,7 +4,6 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
 import { LaunchpadPage } from '../pages/launchpad/launchpad';
 import {RocketsPage} from "../pages/rockets/rockets";
 
@@ -34,7 +33,7 @@ export class MyApp {
       { title: 'Launchpad', component: LaunchpadPage, icon: '', color: '', img: '' },
       { title: 'Rockets', component: RocketsPage, icon: 'planet', color: 'danger', img: '' },
       { title: 'Launches', component: TabslaunchesPage,  icon: 'flash', color: 'gold', img: '' },
-      { title: 'About', component: AboutPage,  icon: '', color: '', img: 'https://upload.wikimedia.org/wikipedia/commons/3/36/SpaceX-Logo-Xonly.svg' },
+      { title: 'About', component: AboutPage,  icon: '', color: '', img: 'assets/imgs/spacex-logo.svg' },
     ];
 
   }
