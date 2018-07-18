@@ -24,16 +24,82 @@
         {{ capsule.name }}
       </ion-card-title>
     </ion-card-header>
-    <ion-card-content class="capsule-content item item-body">
+
+    <ion-card-content class="rocket-content item item-body" *ngIf="capsule">
       <ion-list>
-        <ion-list-header color="primary">Specs</ion-list-header>
+        <ion-list-header color="primary">Thruster</ion-list-header>
+        <!-- Nombre de moteurs -->
         <ion-item color="light">
           <div class="row">
-
+            <ion-col>
+              Number
+            </ion-col>
+            <ion-col>
+              {{ capsule.thrusters[0].amount }}
+            </ion-col>
+          </div>
+        </ion-item>
+        <ion-item >
+          <div class="row">
+            <ion-col>
+              Type of fuel °1
+            </ion-col>
+            <ion-col>
+              {{ capsule.thrusters[0].fuel_1 }}
+            </ion-col>
+          </div>
+        </ion-item>
+        <ion-item color="light">
+          <div class="row">
+            <ion-col>
+              Type of fuel °2
+            </ion-col>
+            <ion-col>
+              {{ capsule.thrusters[0].fuel_2 }}
+            </ion-col>
           </div>
         </ion-item>
       </ion-list>
     </ion-card-content>
-
+    <ion-card-content class="rocket-content item item-body">
+      <ion-list>
+          <ion-list-header color="primary">Launch payload</ion-list-header>
+          <ion-item color="light">
+            <div class="row">
+              <ion-col>
+                Mass
+              </ion-col>
+              <ion-col>
+                {{ capsule.launch_payload_mass.kg }} kg
+              </ion-col>
+            </div>
+          </ion-item>
+          <ion-item color="light">
+            <div class="row">
+              <ion-col>
+                Volume
+              </ion-col>
+              <ion-col>
+                {{ capsule.launch_payload_vol.cubic_meters }} m<sup>3</sup>
+              </ion-col>
+            </div>
+          </ion-item>
+        </ion-list>
+        <ion-list>
+          <ion-list-header color="primary">Return payload</ion-list-header>
+          <ion-item color="light">
+            <div class="row">
+              <ion-col>Mass</ion-col>
+              <ion-col>{{ capsule.return_payload_mass.kg }} kg</ion-col>
+            </div>
+          </ion-item>
+          <ion-item>
+            <div class="row">
+              <ion-col>Volume</ion-col>
+              <ion-col>{{ capsule.return_payload_vol.cubic_meters }} m<sup>3</sup></ion-col>
+            </div>
+          </ion-item>
+        </ion-list>
+    </ion-card-content>
   </ion-card>
 </ion-content>
