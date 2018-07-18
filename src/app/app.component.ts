@@ -28,7 +28,7 @@ export class MyApp {
       { title: 'Home', component: HomePage, icon: 'home', color: 'primary', img: '' },
       { title: 'Launches', component: TabslaunchesPage,  icon: 'calendar', color: 'dark', img: '' },
       { title: 'Rockets', component: RocketsPage, icon: 'ios-jet', color: 'danger', img: '' },
-      { title: 'Capsules', component: CapsulesPage,  icon: 'calendar', color: 'dark', img: '' },
+      { title: 'Capsules', component: CapsulesPage,  icon: 'logo-dropbox', color: 'dark', img: '' },
       { title: 'Launchpad', component: LaunchpadPage, icon: 'planet', color: 'green', img: '' },
       { title: 'About', component: AboutPage,  icon: '', color: '', img: 'assets/imgs/spacex-logo.svg' },
     ];

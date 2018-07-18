@@ -15,10 +15,8 @@
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
 
-ion-icon {
-  &[name=planet] {
-    color: red;
-  }
+.icon {
+  color: #5a73d3;
 }
 
 .menu-item {
