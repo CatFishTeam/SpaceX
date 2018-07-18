@@ -29,7 +29,7 @@
       <div ion-text color="semi-dark-gray" class="description">
         {{ launch.details }}
       </div>
-      <div>
+      <div *ngIf="videoUrl">
         <iframe width="100%" height="315" [src]="videoUrl" frameborder="0" allowfullscreen></iframe>
       </div>
     </ion-card-header>
