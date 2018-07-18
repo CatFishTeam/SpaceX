@@ -45,8 +45,9 @@ export class DetailLaunchPage {
       },
       error => console.log("Error", error),
       () => {
-        this.videoUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.launch.links.video_link.replace("watch?v=", "embed/"));
-        console.log(this.videoUrl);
+        if (this.launch.links.video_link) {
+          this.videoUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.launch.links.video_link.replace("watch?v=", "embed/"));
+        }
       });
   }
 }
