@@ -18,7 +18,7 @@ import { DetailCapsulePage } from "../detail-capsule/detail-capsule";
   templateUrl: 'capsules.html',
 })
 export class CapsulesPage {
-  capsules: ICapsules[];
+  capsules: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public api: SpaceXapiProvider, public modalCtrl: ModalController) {
     this.api.getCapsules().subscribe(data => this.capsules = data);

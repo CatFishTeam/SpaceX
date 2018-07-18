@@ -7,12 +7,33 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>{{capsule.name}}</ion-title>
+    <ion-title *ngIf="capsule">{{ capsule.name }}</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+  <ion-card *ngIf="capsule" class="single-capsule">
+    <ion-card-header class="capsule-header item item-divider">
+      <ion-card-title ion-text color="primary">
+          <span *ngIf="capsule.active; else inactive">
+            <ion-badge color="secondary">&nbsp;</ion-badge>
+          </span>
+        <ng-template #inactive><ion-badge color="danger">&nbsp;</ion-badge></ng-template>
+        {{ capsule.name }}
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content class="capsule-content item item-body">
+      <ion-list>
+        <ion-list-header color="primary">Specs</ion-list-header>
+        <ion-item color="light">
+          <div class="row">
 
+          </div>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+
+  </ion-card>
 </ion-content>

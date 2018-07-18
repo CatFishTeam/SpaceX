@@ -72,8 +72,8 @@ export class SpaceXapiProvider {
     return this.http.get<ICapsules[]>(apiURL);
   }
 
-  getCapsule(name) : Observable<ICapsules> {
-    let apiURL = `${this.apiRoot}/capsules/` + name;
+  getCapsule(id) : Observable<ICapsules> {
+    let apiURL = `${this.apiRoot}/capsules/` + id;
     return this.http.get<ICapsules>(apiURL);
   }
 }
